@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGENCY | Autonomous Assets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background: #09090b; color: #fafafa; font-family: 'Inter', sans-serif; }
+        .glass { background: rgba(24, 24, 27, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(63, 63, 70, 0.4); border-radius: 1rem; transition: all 0.3s ease; }
+        .glass:hover { border-color: #6366f1; transform: translateY(-4px); }
+        .accent-text { background: linear-gradient(to right, #818cf8, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="p-8">
+    <header class="max-w-6xl mx-auto text-center my-16">
+        <h1 class="text-6xl font-black italic tracking-tighter accent-text">AGENCY.</h1>
+        <p class="text-zinc-500 mt-4 text-lg">25 High-Performance Assets Optimized for 2026 Markets.</p>
+    </header>
+
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="product-grid">
+        </div>
+
+    <script>
+        const products = [
+            { id: "RE01", name: "AI Real Estate Suite", price: 29, cat: "Real Estate", link: "YOUR_STRIPE_LINK_1" },
+            { id: "MK02", name: "Ghost-Writer LinkedIn Kit", price: 29, cat: "Marketing", link: "YOUR_STRIPE_LINK_2" },
+            { id: "DV03", name: "Clean-Code Doc Kit", price: 39, cat: "Dev", link: "YOUR_STRIPE_LINK_3" },
+            { id: "LG04", name: "Micro-SaaS Legal Bundle", price: 49, cat: "Legal", link: "YOUR_STRIPE_LINK_4" },
+            { id: "LS05", name: "Biophilic Office Guide", price: 19, cat: "Lifestyle", link: "YOUR_STRIPE_LINK_5" },
+            // ... Add remaining 20 Stripe links here
+        ];
+
+        const grid = document.getElementById('product-grid');
+        products.forEach(p => {
+            grid.innerHTML += `
+                <div class="glass p-6 flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] font-bold uppercase text-indigo-400 tracking-widest">${p.cat}</span>
+                        <h3 class="text-xl font-bold mt-1">${p.name}</h3>
+                    </div>
+                    <a href="${p.link}" class="mt-8 block w-full bg-white text-black text-center py-3 rounded-lg font-bold hover:bg-indigo-500 hover:text-white transition">Buy $${p.price}</a>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>
+
